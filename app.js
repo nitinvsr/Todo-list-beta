@@ -8,7 +8,8 @@ todobutton.addEventListener('click', addtodo)
 todolist.addEventListener('click', checked)
 
 if (localStorage.getItem('storage') === null) {
-    localStorage.setItem('storage', "");
+    var arr = [];
+    localStorage.setItem('storage', JSON.stringify(arr));
 } else {
     var retrievedObject = localStorage.getItem('storage');
     var rarr = [];
