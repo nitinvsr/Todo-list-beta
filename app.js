@@ -7,14 +7,18 @@ const todolist = document.querySelector('.todo-list');
 todobutton.addEventListener('click', addtodo)
 todolist.addEventListener('click', checked)
 
-var retrievedObject = localStorage.getItem('storage');
-var rarr = [];
-rarr = JSON.parse(retrievedObject);
-console.log();
-for (var i = 0; i < rarr.length; i++) {
+if (localStorage.getItem('storage') === null) {
+    localStorage.setItem('storage');
+} else {
+    var retrievedObject = localStorage.getItem('storage');
+    var rarr = [];
+    rarr = JSON.parse(retrievedObject);
+    for (var i = 0; i < rarr.length; i++) {
 
-    makeddiv(rarr[i]);
+        makeddiv(rarr[i]);
+    }
 }
+
 //functions
 function addtodo(event) {
     //prevents form submisson
