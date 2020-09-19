@@ -6,7 +6,7 @@ const todolist = document.querySelector('.todo-list');
 //event listener
 todobutton.addEventListener('click', addtodo)
 todolist.addEventListener('click', checked)
-console.log('Updated');
+console.log("Updated");
 if (localStorage.getItem('storage') === null) {
     var rarr = [];
     localStorage.setItem('storage', JSON.stringify(rarr));
